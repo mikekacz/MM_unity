@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game1.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Game1.cs" Line="166" Column="22" />
+      <File FileName="Assets\Scripts\Secret.cs" Line="37" Column="9" />
+      <File FileName="Assets\Scripts\PipScript.cs" Line="7" Column="28" />
+      <File FileName="Assets\Scripts\Pips.cs" Line="5" Column="30" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
