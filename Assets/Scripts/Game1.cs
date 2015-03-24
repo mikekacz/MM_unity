@@ -161,9 +161,16 @@ public class Game1 : MonoBehaviour {
 	void EvaluateWin(){
 		// stop script routines
 		stoptime = Time.time;
+		// add score to user list
+		//GameObject.Find("Canvas/Panel 0").GetComponent<UserList>().gameUserList.Add(
+
+
 		//show secret
 		GameObject.Find ("Secret").GetComponent<Secret> ().ShowSecret ();
 		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
+
+
+
 	}
 	        
 
