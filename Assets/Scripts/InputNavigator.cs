@@ -40,14 +40,12 @@ public class InputNavigator : MonoBehaviour
 	public InputField[] inputs;
 	public Button button;
 
+	public Color error_clr;
+	public Color normal_clr;
+
 	public void ValidateTexts ()
 	{
 		bool buttonState = true;
-		Color error_clr;
-		Color normal_clr;
-
-		error_clr = new Color (252f, 149f, 149f, 0f);
-		normal_clr = new Color (252f, 252f, 252f, 0f);
 
 		//loop through texts
 		Regex regex;
@@ -72,8 +70,6 @@ public class InputNavigator : MonoBehaviour
 			Match match = regex.Match(inputs[i].text);
 			if (match.Success)
 			{
-
-
 				ColorBlock cb = inputs[i].colors;
 				cb.normalColor = normal_clr;
 				cb.highlightedColor = normal_clr;
