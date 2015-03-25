@@ -164,6 +164,14 @@ public class Game1 : MonoBehaviour {
 		//show secret
 		GameObject.Find ("Secret").GetComponent<Secret> ().ShowSecret ();
 		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
+
+		//add score
+		GameUsersContainer GUListlocal = GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().GUList;
+		GameUser lastentry = GUListlocal.gameUserList [GUListlocal.gameUserList.Count - 1];
+		lastentry.score = Score;
+		//save score to file
+		GUListlocal.SaveXMLData (GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().path);
+
 	}
 	        
 

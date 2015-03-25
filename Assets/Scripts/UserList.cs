@@ -2,11 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
+using UnityEngine.UI;
 
 public class GameUser : IComparable<GameUser>
 {
+	[XmlAttribute("Name")]
 	public string Name;
+	[XmlAttribute("Surname")]
 	public string Surname;
+	[XmlAttribute("email")]
 	public string email;
 	public int score;
 
@@ -17,6 +24,13 @@ public class GameUser : IComparable<GameUser>
 		score = newScore;
 	}
 
+	public GameUser (){
+		Name = "";
+		Surname = "";
+		email = "";
+		score = 0;
+	}
+
 	public int CompareTo(GameUser otherUser){
 	//produces descending comaprison
 		if (otherUser == null) {
@@ -25,22 +39,62 @@ public class GameUser : IComparable<GameUser>
 		return otherUser.score - score;	
 	}
 }
+// http://wiki.unity3d.com/index.php?title=Saving_and_Loading_Data:_XmlSerializer
+[XmlRoot("GameUsersContainer")]
+public class GameUsersContainer
+{
+	[XmlArray("GameUsers")]
+	[XmlArrayItem("GameUser")]
+	public List<GameUser> gameUserList = new List<GameUser>();
+
+	public GameUsersContainer ReadXMLData (string _path)
+	{
+		var serializer = new XmlSerializer (typeof(GameUsersContainer));
+		var stream = new FileStream (_path, FileMode.Open);
+		var container = serializer.Deserialize (stream) as GameUsersContainer;
+		stream.Close ();
+
+		return container;
+	}
+
+	public void SaveXMLData (string _path)
+	{
+		var serializer = new XmlSerializer (typeof(GameUsersContainer));
+		var stream = new FileStream(_path, FileMode.Create);
+		serializer.Serialize(stream, this);
+		stream.Close();
+	}
+}
 
 public class UserList : MonoBehaviour {
-	public List<GameUser> gameUserList = new List<GameUser>();
+	public GameUsersContainer GUList = new GameUsersContainer();
+	public string path = "C:\\Temp\\MasterMind\\ScoreList.xml";
 
 	void Start (){
 		//load previous gamers from file
+		GUList = GUList.ReadXMLData (path);
+		if (GUList.gameUserList == null)
+			GUList = new GameUsersContainer ();
 
-
-		gameUserList.Add(new GameUser("Michal","Kaczmarek","mikekacz@tlen.pl",1999));
-		gameUserList.Add(new GameUser("Michal","Kaczmarek","mikekacz@tlen.pl",9999));
-		gameUserList.Add(new GameUser("Michal","Kaczmarek","mikekacz@tlen.pl",2999));
-
-		gameUserList.Sort ();
-
-		foreach (GameUser gameUser in gameUserList) {
+		foreach (GameUser gameUser in GUList.gameUserList) {
 			Debug.Log (gameUser.Name + " " + gameUser.Surname + " " + gameUser.score); 
 		}
+
+	}
+
+	public void AddGamer ()
+	{
+		string name;
+		string surname;
+		string email;
+
+		name = GameObject.Find ("Q1InputField").GetComponent<InputField>().text;
+		surname = GameObject.Find ("Q2InputField").GetComponent<InputField>().text;
+		email = GameObject.Find ("Q3InputField").GetComponent<InputField>().text;
+
+		//Debug.Log (name + " " + surname + " " + email); 
+
+		GUList.gameUserList.Add (new GameUser(name,surname,email,0));
 	}
 }
+
