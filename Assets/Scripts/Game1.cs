@@ -141,8 +141,8 @@ public class Game1 : MonoBehaviour {
 		string textleft = string.Format ("{0:00}:{1:00}", displayMinutes, displaySeconds); 
 
 		float ratio_guess = bestguess / 100f;
-		float ratio_tries = (((10f - currentrow) * 2.5f / 10f) + 7.5f) / 10f;
-		float ratio_time = ((restseconds / countdown) * 0.5f) +0.5f;
+		float ratio_tries = (((10f - currentrow) * 2.5f / 10f) + 7.5f) / 10f; // 0row -> 1.0 ; 10row -> .75
+		float ratio_time = ((restseconds / countdown) * 0.5f) +0.5f; // 0sec -> 1.0 ; 600s -> .5
 
 		//Debug.Log(ratio_guess);
 		//Debug.Log(ratio_tries);
@@ -171,6 +171,10 @@ public class Game1 : MonoBehaviour {
 		lastentry.score = Score;
 		//save score to file
 		GUListlocal.SaveXMLData (GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().path);
+
+		//sort
+
+		//display highscore
 
 	}
 	        

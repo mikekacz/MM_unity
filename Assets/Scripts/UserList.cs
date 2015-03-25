@@ -15,6 +15,7 @@ public class GameUser : IComparable<GameUser>
 	public string Surname;
 	[XmlAttribute("email")]
 	public string email;
+	[XmlAttribute("score")]
 	public int score;
 
 	public GameUser (string newName, string newSurname, string newEmail, int newScore){
@@ -39,6 +40,8 @@ public class GameUser : IComparable<GameUser>
 		return otherUser.score - score;	
 	}
 }
+
+
 // http://wiki.unity3d.com/index.php?title=Saving_and_Loading_Data:_XmlSerializer
 [XmlRoot("GameUsersContainer")]
 public class GameUsersContainer
@@ -95,6 +98,7 @@ public class UserList : MonoBehaviour {
 		//Debug.Log (name + " " + surname + " " + email); 
 
 		GUList.gameUserList.Add (new GameUser(name,surname,email,0));
+		GUList.SaveXMLData (path);
 	}
 }
 
