@@ -161,10 +161,10 @@ public class Game1 : MonoBehaviour {
 		int displayMinutes = roundedRestSeconds / 60; 
 		string textleft = string.Format ("{0:00}:{1:00}", displayMinutes, displaySeconds); 
 
-		GetComponent<UnityEngine.UI.Text> ().text = "Time Left:\n\r "+textleft;
-		GetComponent<UnityEngine.UI.Text> ().text += "\n\rCurrent Row:\n\r "+(currentrow+1);
-		GetComponent<UnityEngine.UI.Text> ().text += "\n\rBest Guess:\n\r "+bestguess;
-		GetComponent<UnityEngine.UI.Text> ().text += "\n\r\n\rScore:\n\r "+Score;
+		GetComponent<UnityEngine.UI.Text> ().text = "Time Left: "+textleft;
+		//GEtComponent<UnityEngine.UI.Text> ().text += "\n\rCurrent Row:\n\r "+(currentrow+1);
+		//GetComponent<UnityEngine.UI.Text> ().text += "\n\rBest Guess:\n\r "+bestguess;
+		GetComponent<UnityEngine.UI.Text> ().text += "\n\rScore: "+Score;
 	}
 
 
