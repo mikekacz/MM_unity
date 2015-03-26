@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class PipScript : MonoBehaviour {
 	// colors
@@ -20,22 +21,28 @@ public class PipScript : MonoBehaviour {
 	
 	void OnMouseDown ()
     {
-		//catch if row is active
-		//catch if clicking on secret row
-		if (active) {
+		//catch if clicking through UI
+		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
+			Debug.Log ("ui active");
+			return;
+		} 
+			//catch if row is active
+			//catch if clicking on secret row
+			if (active) {
 
-			if (this.GetComponentInParent<Pips> () != null) {
+				if (this.GetComponentInParent<Pips> () != null) {
 
-				if (currentcolorindex == -1) {
-					GetComponent<Renderer> ().material = colorset [0];
-					currentcolorindex = 0;
-				} else {
-					currentcolorindex ++;
-					if (currentcolorindex == colorset.Length)
+					if (currentcolorindex == -1) {
+						GetComponent<Renderer> ().material = colorset [0];
 						currentcolorindex = 0;
-					GetComponent<Renderer> ().material = colorset [currentcolorindex];
+					} else {
+						currentcolorindex ++;
+						if (currentcolorindex == colorset.Length)
+							currentcolorindex = 0;
+						GetComponent<Renderer> ().material = colorset [currentcolorindex];
+					}
 				}
 			}
-		}
+
     }
 }

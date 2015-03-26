@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BlockClick.cs" />
      <Compile Include="Assets\Scripts\Game1.cs" />
      <Compile Include="Assets\Scripts\InputNavigator.cs" />
      <Compile Include="Assets\Scripts\PipScript.cs" />

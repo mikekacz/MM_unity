@@ -79,8 +79,9 @@ public class UserList : MonoBehaviour {
 		if (GUList.gameUserList == null)
 			GUList = new GameUsersContainer ();
 
+		//log out current game user list
 		foreach (GameUser gameUser in GUList.gameUserList) {
-			Debug.Log (gameUser.Name + " " + gameUser.Surname + " " + gameUser.score); 
+			//Debug.Log (gameUser.Name + " " + gameUser.Surname + " " + gameUser.score); 
 		}
 
 	}

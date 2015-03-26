@@ -33,6 +33,11 @@ public class Game1 : MonoBehaviour {
 	}
 
 	public void CheckGuess(){
+		//check if UI is active
+		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
+			Debug.Log ("ui active");
+			return;
+		} 
 		//calculate guess
 		float guess = 0.0f;
 		// array containing secret colors
@@ -130,26 +135,31 @@ public class Game1 : MonoBehaviour {
 			newRow.transform.GetChild(2).gameObject.SetActive(true);
 		}
 	}
-	
-	// Update is called once per frame
-	void OnGUI (){
+	// Calculate Score
+	void prepareScore(){
 		float guiTime = (Time.time < stoptime)?Time.time - starttime:stoptime - starttime;
 		restseconds = countdown - (guiTime);
-		int roundedRestSeconds = Mathf.CeilToInt(restseconds);
-		int displaySeconds = roundedRestSeconds % 60;
-		int displayMinutes = roundedRestSeconds / 60; 
-		string textleft = string.Format ("{0:00}:{1:00}", displayMinutes, displaySeconds); 
 
 		float ratio_guess = bestguess / 100f;
 		float ratio_tries = (((10f - currentrow) * 2.5f / 10f) + 7.5f) / 10f; // 0row -> 1.0 ; 10row -> .75
 		float ratio_time = ((restseconds / countdown) * 0.5f) +0.5f; // 0sec -> 1.0 ; 600s -> .5
-
+		
 		//Debug.Log(ratio_guess);
 		//Debug.Log(ratio_tries);
 		//Debug.Log(ratio_time);
-
+		
 		Score = Mathf.CeilToInt(10000f * ratio_guess * ratio_tries * ratio_time);
+	}
 
+
+	// Update is called once per frame
+	void OnGUI (){
+		prepareScore ();
+
+		int roundedRestSeconds = Mathf.CeilToInt(restseconds);
+		int displaySeconds = roundedRestSeconds % 60;
+		int displayMinutes = roundedRestSeconds / 60; 
+		string textleft = string.Format ("{0:00}:{1:00}", displayMinutes, displaySeconds); 
 
 		GetComponent<UnityEngine.UI.Text> ().text = "Time Left:\n\r "+textleft;
 		GetComponent<UnityEngine.UI.Text> ().text += "\n\rCurrent Row:\n\r "+(currentrow+1);
@@ -159,8 +169,12 @@ public class Game1 : MonoBehaviour {
 
 
 	void EvaluateWin(){
+		//Debug.Break();
 		// stop script routines
 		stoptime = Time.time;
+		// calculate score
+		prepareScore ();
+
 		//show secret
 		GameObject.Find ("Secret").GetComponent<Secret> ().ShowSecret ();
 		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
@@ -168,6 +182,7 @@ public class Game1 : MonoBehaviour {
 		//add score
 		GameUsersContainer GUListlocal = GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().GUList;
 		GameUser lastentry = GUListlocal.gameUserList [GUListlocal.gameUserList.Count - 1];
+
 		lastentry.score = Score;
 		//save score to file
 		GUListlocal.SaveXMLData (GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().path);

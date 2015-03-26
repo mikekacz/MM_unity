@@ -12,9 +12,10 @@ public class InputNavigator : MonoBehaviour
 	void Start()
 	{
 		system = EventSystem.current;// EventSystemManager.currentSystem;
+
 		inputs [0].ActivateInputField ();
 		ValidateTexts ();
-		
+
 	}
 	// Update is called once per frame
 	void Update()
