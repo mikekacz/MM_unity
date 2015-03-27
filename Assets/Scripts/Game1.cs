@@ -168,6 +168,8 @@ public class Game1 : MonoBehaviour {
 		GetComponent<UnityEngine.UI.Text> ().text = "Score: "+Score;
 	}
 
+	public GameUser lastentry ;
+
 
 	void EvaluateWin(){
 		//Debug.Break();
@@ -182,7 +184,7 @@ public class Game1 : MonoBehaviour {
 
 		//add score
 		GameUsersContainer GUListlocal = GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().GUList;
-		GameUser lastentry = GUListlocal.gameUserList [GUListlocal.gameUserList.Count - 1];
+		lastentry = GUListlocal.gameUserList [GUListlocal.gameUserList.Count - 1];
 
 		lastentry.score = Score;
 		//save score to file

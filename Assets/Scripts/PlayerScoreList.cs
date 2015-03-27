@@ -30,13 +30,10 @@ public class PlayerScoreList : MonoBehaviour {
 
 		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count : RowNumber; //warning hidden IF statement
 
-		//foreach (GameUser user in (System.Collections.Generic.IEnumerable<GameUser>) userList.gameUserList) {
-		//	GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);
-		//	go.transform.SetParent (this.transform, false);
-		//	go.transform.Find("Name").GetComponent<Text>().text = user.Name;
-		//	go.transform.Find("Surname").GetComponent<Text>().text = user.Surname;
-		//	go.transform.Find("Score").GetComponent<Text>().text = user.score.ToString();
-		//}
+		//mark my score
+		GameUser _lastentry = GameObject.Find ("/Canvas/Panel 1/Scoreboard").GetComponent<Game1> ().lastentry;
+		//Debug.Log(userList.gameUserList.FindIndex (_lastentry));
+
 
 		for (int i=0; i<RowNumber; i++){
 			GameUser user = userList.gameUserList[i];

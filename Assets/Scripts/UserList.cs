@@ -37,6 +37,9 @@ public class GameUser : IComparable<GameUser>
 		if (otherUser == null) {
 			return 1;
 		}
+		if (otherUser.Name == this.Name && otherUser.Surname == this.Surname && otherUser.email == this.email && otherUser.score == this.score) {
+			return 0;
+		}
 		return otherUser.score - score;	
 	}
 }
