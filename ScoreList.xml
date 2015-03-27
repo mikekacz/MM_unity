@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<GameUsersContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GameUsers>
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="9683" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="9790" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="9084" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="9856" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="9708" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="6428" />
+  </GameUsers>
+</GameUsersContainer>
