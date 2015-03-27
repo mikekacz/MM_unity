@@ -186,7 +186,7 @@ public class Game1 : MonoBehaviour {
 
 		lastentry.score = Score;
 		//save score to file
-		GUListlocal.SaveXMLData (GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().path);
+		GUListlocal.SaveXMLData (GameObject.Find("/Canvas").transform.GetChild(0).GetComponent<UserList>().path);
 
 
 	}

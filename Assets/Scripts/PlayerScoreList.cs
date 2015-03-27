@@ -28,7 +28,7 @@ public class PlayerScoreList : MonoBehaviour {
 			Destroy (child.gameObject);
 		}
 
-		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count - 1 : RowNumber; //warning hidden IF statement
+		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count : RowNumber; //warning hidden IF statement
 
 		//foreach (GameUser user in (System.Collections.Generic.IEnumerable<GameUser>) userList.gameUserList) {
 		//	GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);

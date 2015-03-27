@@ -52,9 +52,9 @@ public class GameUsersContainer
 
 	public static GameUsersContainer ReadXMLData (string _path)
 	{
-		if (!File.Exists(_path))
+		if (!File.Exists (_path)) {
 			return new GameUsersContainer ();
-		
+		}
 		var serializer = new XmlSerializer (typeof(GameUsersContainer));
 		var stream = new FileStream (_path, FileMode.Open);
 		var container = serializer.Deserialize (stream) as GameUsersContainer;
@@ -77,6 +77,9 @@ public class UserList : MonoBehaviour {
 	public string path;
 
 	void Start (){
+		//initialize path
+		Debug.Log (path);
+
 		//load previous gamers from file
 		GUList = GameUsersContainer.ReadXMLData (path);
 	}
