@@ -8,13 +8,15 @@ public class PlayerScoreList : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		userList = GameUsersContainer.ReadXMLData (".\\ScoreList.xml");
-		
+		//userList = GameUsersContainer.ReadXMLData (".\\ScoreList.xml");
+		userList = GameUsersContainer.ReadXMLData (GameObject.Find("/Canvas").transform.GetChild(0).GetComponent<UserList>().path);
+
 		userList.gameUserList.Sort ();
+
+		DrawScoreboard ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void DrawScoreboard () {
 		int RowNumber = 10;
 
 		if (userList == null)
@@ -26,7 +28,7 @@ public class PlayerScoreList : MonoBehaviour {
 			Destroy (child.gameObject);
 		}
 
-		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count - 1 : RowNumber;
+		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count - 1 : RowNumber; //warning hidden IF statement
 
 		//foreach (GameUser user in (System.Collections.Generic.IEnumerable<GameUser>) userList.gameUserList) {
 		//	GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);

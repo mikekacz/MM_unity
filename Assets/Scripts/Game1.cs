@@ -137,7 +137,7 @@ public class Game1 : MonoBehaviour {
 	}
 	// Calculate Score
 	void prepareScore(){
-		float guiTime = (Time.time < stoptime)?Time.time - starttime:stoptime - starttime;
+		float guiTime = (Time.time < stoptime) ? Time.time - starttime : stoptime - starttime;  //warning hidden IF statement
 		restseconds = countdown - (guiTime);
 
 		float ratio_guess = bestguess / 100f;
@@ -188,9 +188,6 @@ public class Game1 : MonoBehaviour {
 		//save score to file
 		GUListlocal.SaveXMLData (GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().path);
 
-		//sort
-
-		//display highscore
 
 	}
 	        
