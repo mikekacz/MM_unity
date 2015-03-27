@@ -9,10 +9,14 @@ public class PlayerScoreList : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		userList = GameUsersContainer.ReadXMLData (".\\ScoreList.xml");
+		
+		userList.gameUserList.Sort ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		int RowNumber = 10;
+
 		if (userList == null)
 			return;
 
@@ -22,7 +26,18 @@ public class PlayerScoreList : MonoBehaviour {
 			Destroy (child.gameObject);
 		}
 
-		foreach (GameUser user in (System.Collections.Generic.IEnumerable<GameUser>) userList.gameUserList) {
+		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count - 1 : RowNumber;
+
+		//foreach (GameUser user in (System.Collections.Generic.IEnumerable<GameUser>) userList.gameUserList) {
+		//	GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);
+		//	go.transform.SetParent (this.transform, false);
+		//	go.transform.Find("Name").GetComponent<Text>().text = user.Name;
+		//	go.transform.Find("Surname").GetComponent<Text>().text = user.Surname;
+		//	go.transform.Find("Score").GetComponent<Text>().text = user.score.ToString();
+		//}
+
+		for (int i=0; i<RowNumber; i++){
+			GameUser user = userList.gameUserList[i];
 			GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);
 			go.transform.SetParent (this.transform, false);
 			go.transform.Find("Name").GetComponent<Text>().text = user.Name;

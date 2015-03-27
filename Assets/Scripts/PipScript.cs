@@ -25,6 +25,10 @@ public class PipScript : MonoBehaviour {
 		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
 			Debug.Log ("ui active");
 			return;
+		}
+		if (GameObject.Find ("/Canvas").transform.GetChild (2).gameObject.activeInHierarchy) {
+			Debug.Log ("ui active");
+			return;
 		} 
 			//catch if row is active
 			//catch if clicking on secret row
