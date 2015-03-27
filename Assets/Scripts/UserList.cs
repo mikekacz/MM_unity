@@ -48,10 +48,13 @@ public class GameUsersContainer
 {
 	[XmlArray("GameUsers")]
 	[XmlArrayItem("GameUser")]
-	public List<GameUser> gameUserList = new List<GameUser>();
+	public List<GameUser> gameUserList = new List<GameUser> ();
 
-	public GameUsersContainer ReadXMLData (string _path)
+	public static GameUsersContainer ReadXMLData (string _path)
 	{
+		if (!File.Exists(_path))
+			return new GameUsersContainer ();
+		
 		var serializer = new XmlSerializer (typeof(GameUsersContainer));
 		var stream = new FileStream (_path, FileMode.Open);
 		var container = serializer.Deserialize (stream) as GameUsersContainer;
@@ -60,30 +63,22 @@ public class GameUsersContainer
 		return container;
 	}
 
-	public void SaveXMLData (string _path)
+	public void SaveXMLData(string _path)
 	{
 		var serializer = new XmlSerializer (typeof(GameUsersContainer));
-		var stream = new FileStream(_path, FileMode.Create);
-		serializer.Serialize(stream, this);
-		stream.Close();
+		var stream = new FileStream (_path, FileMode.Create);
+		serializer.Serialize (stream, this);
+		stream.Close ();
 	}
 }
 
 public class UserList : MonoBehaviour {
-	public GameUsersContainer GUList = new GameUsersContainer();
-	public string path = "C:\\Temp\\MasterMind\\ScoreList.xml";
+	public GameUsersContainer GUList;
+	public string path;
 
 	void Start (){
 		//load previous gamers from file
-		GUList = GUList.ReadXMLData (path);
-		if (GUList.gameUserList == null)
-			GUList = new GameUsersContainer ();
-
-		//log out current game user list
-		foreach (GameUser gameUser in GUList.gameUserList) {
-			//Debug.Log (gameUser.Name + " " + gameUser.Surname + " " + gameUser.score); 
-		}
-
+		GUList = GameUsersContainer.ReadXMLData (path);
 	}
 
 	public void AddGamer ()
@@ -96,10 +91,7 @@ public class UserList : MonoBehaviour {
 		surname = GameObject.Find ("Q2InputField").GetComponent<InputField>().text;
 		email = GameObject.Find ("Q3InputField").GetComponent<InputField>().text;
 
-		//Debug.Log (name + " " + surname + " " + email); 
-
 		GUList.gameUserList.Add (new GameUser(name,surname,email,0));
 		GUList.SaveXMLData (path);
 	}
 }
-
