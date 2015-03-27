@@ -17,5 +17,6 @@
     <GameUser Name="Mi" Surname="Mi" email="mi@tlen.pl" score="1907" />
     <GameUser Name="Mk" Surname="Mk" email="mk@tl.pl" score="9462" />
     <GameUser Name="Michal" Surname="Kaczmarek" email="mikekacz@tlen.pl" score="9468" />
+    <GameUser Name="Mk" Surname="Mk" email="mikekacz@tlen.pl" score="954" />
   </GameUsers>
 </GameUsersContainer>
