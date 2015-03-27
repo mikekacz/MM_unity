@@ -1,44 +1,64 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerScoreList : MonoBehaviour {
 	public GameObject playerScoreEntryPrefab;
-	GameUsersContainer userList;
+	List<GameUser> playerList;
+	GameUser lastPlayer = null;
 
 	// Use this for initialization
 	void Start () {
-		//userList = GameUsersContainer.ReadXMLData (".\\ScoreList.xml");
-		userList = GameUsersContainer.ReadXMLData (GameObject.Find("/Canvas").transform.GetChild(0).GetComponent<UserList>().path);
+		// Load current score list from ".\ScoreList.xml"
+		GameUsersContainer userCont = GameUsersContainer.ReadXMLData (GameObject.Find("/Canvas").transform.GetChild(0).GetComponent<UserList>().path);
+		playerList = userCont.gameUserList;
 
-		userList.gameUserList.Sort ();
+		// Remember last player
+		lastPlayer = playerList[playerList.Count - 1];
+
+		// Sort the player list by score value
+		playerList.Sort ();
 
 		DrawScoreboard ();
 	}
 
+	// Draw the Scoreboard
 	void DrawScoreboard () {
-		int RowNumber = 10;
+		int rowNumber = 10;	// Number of Scoreboard rows
+		int counter = 0;	// Scoreboard row counter
 
-		if (userList == null)
+		// User list is empty -> nothing to draw
+		if (playerList == null)
 			return;
 
+		// Cleanup objects that we created
 		while (this.transform.childCount > 0) {
 			Transform child = this.transform.GetChild(0);
 			child.SetParent(null);
 			Destroy (child.gameObject);
 		}
 
-		RowNumber = (userList.gameUserList.Count < RowNumber) ? userList.gameUserList.Count : RowNumber; //warning hidden IF statement
+		// Score list is shorter then 10 entries
+		if (playerList.Count < rowNumber)
+			rowNumber = playerList.Count;
 
-		//mark my score
-		GameUser _lastentry = GameObject.Find ("/Canvas/Panel 1/Scoreboard").GetComponent<Game1> ().lastentry;
-		//Debug.Log(userList.gameUserList.FindIndex (_lastentry));
+		// Draw and fill the rows
+		for (; counter < rowNumber; ) {
+			// Current player
+			GameUser user = playerList[counter];
+			counter++;
 
-
-		for (int i=0; i<RowNumber; i++){
-			GameUser user = userList.gameUserList[i];
+			// Create row and add it to the vertical layout group
 			GameObject go = (GameObject) Instantiate (playerScoreEntryPrefab);
 			go.transform.SetParent (this.transform, false);
+
+			// Find matching user and highlight his entry green
+			if (user.Equals (lastPlayer))
+				go.transform.GetComponent<Image>().color = new Color(0.59f, 1.0f, 0.55f, 0.59f);
+
+			// Fill the values of the row
+			go.transform.Find("Rank").GetComponent<Text>().text = counter.ToString();
 			go.transform.Find("Name").GetComponent<Text>().text = user.Name;
 			go.transform.Find("Surname").GetComponent<Text>().text = user.Surname;
 			go.transform.Find("Score").GetComponent<Text>().text = user.score.ToString();
