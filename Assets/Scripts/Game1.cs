@@ -17,6 +17,8 @@ public class Game1 : MonoBehaviour {
 	public Material colorMatch;
 	public Material colorPartialMatch;
 
+	public bool alreadyStopped = false;
+
 	// Use this for initialization
 	void Start () {
 		StartClock ();
@@ -137,8 +139,12 @@ public class Game1 : MonoBehaviour {
 	}
 	// Calculate Score
 	void prepareScore(){
-		float guiTime = (Time.time < stoptime) ? Time.time - starttime : stoptime - starttime;  //warning hidden IF statement
-		restseconds = countdown - (guiTime);
+
+		if (!alreadyStopped) {
+			float guiTime = (Time.time < stoptime) ? Time.time - starttime : stoptime - starttime;  //warning hidden IF statement
+			restseconds = countdown - (guiTime);
+		} else 
+			restseconds = 0;
 
 		float ratio_guess = bestguess / 100f;
 		float ratio_tries = (((10f - currentrow) * 2.5f / 10f) + 7.5f) / 10f; // 0row -> 1.0 ; 10row -> .75
@@ -154,6 +160,8 @@ public class Game1 : MonoBehaviour {
 
 	// Update is called once per frame
 	void OnGUI (){
+
+
 		prepareScore ();
 
 		int roundedRestSeconds = Mathf.CeilToInt(restseconds);
@@ -172,7 +180,13 @@ public class Game1 : MonoBehaviour {
 
 
 	void EvaluateWin(){
-		//Debug.Break();
+		//do not run if Stopped already
+		if (alreadyStopped)
+			return;
+
+		alreadyStopped = true;
+
+		Debug.Break();
 		// stop script routines
 		stoptime = Time.time;
 		// calculate score

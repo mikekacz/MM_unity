@@ -1,6 +1,62 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-2872
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-4-16256
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=14 type=0 insize=938 outsize=5499 kw=SPOT SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=938 outsize=2863 kw=POINT SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=938 outsize=3367 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=816 outsize=5569 kw=POINT SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=816 outsize=3659 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=9591 outsize=6128 kw= ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=541 outsize=704 kw=SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=3647 outsize=2246 kw=POINT_COOKIE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=5974 outsize=2916 kw=LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF HDR_LIGHT_PREPASS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1275 outsize=1159 kw=POINT_COOKIE SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1275 outsize=3567 kw=POINT SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1268 outsize=1159 kw=POINT SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1268 outsize=1159 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1268 outsize=3963 kw=POINT_COOKIE SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1273 outsize=1159 kw=POINT SHADOWS_CUBE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1273 outsize=1159 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1273 outsize=3968 kw=POINT_COOKIE SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1273 outsize=5915 kw=POINT_COOKIE SHADOWS_CUBE SHADOWS_SOFT ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1934 outsize=1159 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1934 outsize=1159 kw=DIRECTIONAL_COOKIE SHADOWS_SCREEN SHADOWS_NATIVE ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=1934 outsize=1159 kw=SPOT SHADOWS_DEPTH SHADOWS_NATIVE UNITY_HDR_ON ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1934 outsize=3882 kw=DIRECTIONAL_COOKIE SHADOWS_OFF ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1934 outsize=3319 kw=DIRECTIONAL SHADOWS_OFF UNITY_HDR_ON ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1934 outsize=6571 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE UNITY_HDR_ON ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=683 outsize=642 kw= ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=1051 outsize=843 kw= ok=1
+Cmd: compileSnippet
+  api=14 type=0 insize=6481 outsize=686 kw= ok=1
+Cmd: compileSnippet
+  api=14 type=1 insize=723 outsize=724 kw= ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 
