@@ -78,7 +78,7 @@ public class InputNavigator : MonoBehaviour
 				inputs[i].colors = cb;
 			}
 			else {
-				buttonState = false;
+				buttonState = true;
 
 				ColorBlock cb = inputs[i].colors;
 				cb.normalColor = error_clr;

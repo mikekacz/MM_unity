@@ -81,7 +81,9 @@ public class UserList : MonoBehaviour {
 
 	void Start (){
 		//initialize path
+		path = Application.persistentDataPath +Path.DirectorySeparatorChar + "ScoreList.xml";
 		Debug.Log (path);
+
 
 		//load previous gamers from file
 		GUList = GameUsersContainer.ReadXMLData (path);
