@@ -77,29 +77,23 @@ public class GameUsersContainer
 
 public class UserList : MonoBehaviour {
 	public GameUsersContainer GUList;
-	public string path;
 
-	void Start (){
-		//initialize path
-		path = Application.persistentDataPath +Path.DirectorySeparatorChar + "ScoreList.xml";
-		Debug.Log (path);
-
-
+	// Initialization
+	void Start () {
 		//load previous gamers from file
-		GUList = GameUsersContainer.ReadXMLData (path);
+		GUList = GameUsersContainer.ReadXMLData (_GLOBAL.saveFile);
 	}
 
-	public void AddGamer ()
-	{
-		string name;
-		string surname;
-		string email;
+	public void AddGamer () {
+		// Get user information from input field on thhr login screen
+		string name = GameObject.Find ("Q1InputField").GetComponent<InputField>().text;
+		string surname = GameObject.Find ("Q2InputField").GetComponent<InputField>().text;
+		string email = GameObject.Find ("Q3InputField").GetComponent<InputField>().text;
 
-		name = GameObject.Find ("Q1InputField").GetComponent<InputField>().text;
-		surname = GameObject.Find ("Q2InputField").GetComponent<InputField>().text;
-		email = GameObject.Find ("Q3InputField").GetComponent<InputField>().text;
+		// Add a new user to the user list
+		GUList.gameUserList.Add (new GameUser(name, surname, email, 0));
 
-		GUList.gameUserList.Add (new GameUser(name,surname,email,0));
-		GUList.SaveXMLData (path);
+		// Store user list in the save file
+		GUList.SaveXMLData (_GLOBAL.saveFile);
 	}
 }

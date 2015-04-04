@@ -2,17 +2,24 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class PlayerScoreList : MonoBehaviour {
 	public GameObject playerScoreEntryPrefab;
 	List<GameUser> playerList;
 	GameUser lastPlayer = null;
 
-	// Use this for initialization
+	// Initialization
 	void Start () {
-		// Load current score list from ".\ScoreList.xml"
-		GameUsersContainer userCont = GameUsersContainer.ReadXMLData (GameObject.Find("/Canvas").transform.GetChild(0).GetComponent<UserList>().path);
-		playerList = userCont.gameUserList;
+		// Load current score list from save file
+		GameUsersContainer userCont = GameUsersContainer.ReadXMLData (_GLOBAL.saveFile);
+
+		// Check if save file is not empty
+		if (userCont.gameUserList.Count == 0)
+			return;
+		//and get player list
+		else
+			playerList = userCont.gameUserList;
 
 		// Remember last player
 		lastPlayer = playerList[playerList.Count - 1];
