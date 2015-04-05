@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\PipScript.cs" />
      <Compile Include="Assets\Scripts\Pips.cs" />
      <Compile Include="Assets\Scripts\PlayerScoreList.cs" />
+     <Compile Include="Assets\Scripts\ScoreboardScript.cs" />
      <Compile Include="Assets\Scripts\Secret.cs" />
      <Compile Include="Assets\Scripts\UserList.cs" />
      <Compile Include="Assets\Scripts\_GLOBAL.cs" />

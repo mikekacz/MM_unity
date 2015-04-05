@@ -71,10 +71,19 @@ public class GameUsersContainer {
 }
 
 public class UserList : MonoBehaviour {
-	// Initialization
+	// Use this for initialization
 	void Start() {
 		// Load previous gamers from file
 		_GLOBAL.users = GameUsersContainer.ReadXMLData(_GLOBAL.saveFile);
+	}
+
+	// Update is called once per frame
+	void Update () {
+		// F1 Key pressed
+		if (Input.GetKeyDown(KeyCode.F1)) {
+			_GLOBAL.loginPanel.SetActive(false);
+			_GLOBAL.scorePanel.SetActive(true);
+		}
 	}
 
 	// Add a new gamer to the list
