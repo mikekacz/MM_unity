@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -197,12 +197,11 @@ public class Game1 : MonoBehaviour {
 		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
 
 		//add score
-		GameUsersContainer GUListlocal = GameObject.Find ("/Canvas").transform.GetChild(0).GetComponent<UserList> ().GUList;
-		lastentry = GUListlocal.gameUserList [GUListlocal.gameUserList.Count - 1];
+		lastentry = _GLOBAL.users.list[_GLOBAL.users.list.Count - 1];
 
 		lastentry.score = Score;
 		//save score to file
-		GUListlocal.SaveXMLData (_GLOBAL.saveFile);
+		_GLOBAL.users.SaveXMLData (_GLOBAL.saveFile);
 
 
 	}
