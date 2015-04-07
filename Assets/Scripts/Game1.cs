@@ -186,7 +186,7 @@ public class Game1 : MonoBehaviour {
 
 		alreadyStopped = true;
 
-		Debug.Break();
+		// Debug.Break();
 		// stop script routines
 		stoptime = Time.time;
 		// calculate score
