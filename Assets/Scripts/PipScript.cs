@@ -6,15 +6,21 @@ public class PipScript : MonoBehaviour {
 	// colors
 	public Material[] colorset;
 	public bool active = true;
+	private float rotSpeed;
 	
 	// Use this for initialization
 	void Start () {
-	
+		rotSpeed = Random.Range (0, 20);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (active) {
+			//rotate ball
+		transform.Rotate(0, Time.deltaTime *rotSpeed, 0);
+
+
+		}
 	}
 
 	private int currentcolorindex = -1;
@@ -49,4 +55,6 @@ public class PipScript : MonoBehaviour {
 			}
 
     }
+
+
 }
