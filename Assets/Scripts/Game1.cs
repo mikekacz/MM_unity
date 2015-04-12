@@ -143,8 +143,9 @@ public class Game1 : MonoBehaviour {
 		if (!alreadyStopped) {
 			float guiTime = (Time.time < stoptime) ? Time.time - starttime : stoptime - starttime;  //warning hidden IF statement
 			restseconds = countdown - (guiTime);
-		} else 
-			restseconds = 0;
+		} 
+		//else 
+		//	restseconds = 0;
 
 		float ratio_guess = bestguess / 100f;
 		float ratio_tries = (((10f - currentrow) * 2.5f / 10f) + 7.5f) / 10f; // 0row -> 1.0 ; 10row -> .75
