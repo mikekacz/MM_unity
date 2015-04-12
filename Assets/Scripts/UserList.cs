@@ -81,8 +81,8 @@ public class UserList : MonoBehaviour {
 	void Update () {
 		// F1 Key pressed
 		if (Input.GetKeyDown(KeyCode.F1)) {
-			_GLOBAL.loginPanel.SetActive(false);
-			_GLOBAL.scorePanel.SetActive(true);
+			this.gameObject.SetActive(false);
+			GameObject.Find("/Canvas").transform.GetChild(2).gameObject.SetActive(true);
 		}
 	}
 

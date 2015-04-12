@@ -10,10 +10,4 @@ public class _GLOBAL {
 
 	// Number of scoreboard rows
 	public static int scoreRows = 10;
-
-	// Login panel
-	public static GameObject loginPanel = GameObject.Find("/Canvas").transform.GetChild(0).gameObject;
-
-	// Scoreboard panel
-	public static GameObject scorePanel = GameObject.Find("/Canvas").transform.GetChild(2).gameObject;
-}
+	}

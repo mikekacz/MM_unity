@@ -30,8 +30,8 @@ public class Game1 : MonoBehaviour {
 		currentrow = 0;
 	}
 
-	public void ResetGame(){
-		Application.LoadLevel ("MM");
+	public void ResetGame() {
+		Application.LoadLevel("StartGame");
 	}
 
 	public void CheckGuess(){
