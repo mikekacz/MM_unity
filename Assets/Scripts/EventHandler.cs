@@ -56,7 +56,7 @@ public class EventHandler : MonoBehaviour {
 				break;
 			case TouchPhase.Ended:
 				var swipeVector = touch.position - touchPosPrev;
-				if (couldBeSwipe && (swipeVector.magnitude > minSwipeDist) && ((swipeVector.x / swipeVector.y > 4) || (swipeVector.x / swipeVector.y < -4) )) {
+				if (couldBeSwipe && (swipeVector.magnitude > minSwipeDist) && ((swipeVector.x / swipeVector.y > 1) || (swipeVector.x / swipeVector.y < -1) )) {
 					switchScreen();
 				}
 				break;
