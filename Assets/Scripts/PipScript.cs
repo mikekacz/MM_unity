@@ -16,10 +16,13 @@ public class PipScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (active) {
-			//rotate ball
-		transform.Rotate(0, Time.deltaTime *rotSpeed, 0);
+			
+			if (this.GetComponentInParent<Pips> () != null) {
+				//rotate ball
+				transform.Rotate (0, Time.deltaTime * rotSpeed, 0);
 
 
+			}
 		}
 	}
 

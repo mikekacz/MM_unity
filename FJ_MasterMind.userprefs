@@ -1,9 +1,11 @@
 ﻿<Properties GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ScoreboardScript.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Game1.cs">
     <Files>
-      <File FileName="Assets\Scripts\ScoreboardScript.cs" Line="52" Column="2" />
-      <File FileName="Assets\Scripts\UserList.cs" Line="127" Column="1" />
+      <File FileName="Assets\Scripts\Pips.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PipScript.cs" Line="20" Column="53" />
+      <File FileName="Assets\Scripts\Game1.cs" Line="201" Column="1" />
+      <File FileName="Assets\Scripts\PlayerScoreList.cs" Line="29" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
