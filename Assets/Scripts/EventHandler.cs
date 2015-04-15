@@ -5,7 +5,7 @@ using System.Collections;
 public class EventHandler : MonoBehaviour {
 	private Vector2 touchPosPrev;
 	private bool couldBeSwipe;
-	private int errorMargin = 10;
+
 	private int minSwipeDist = 10;
 
 	// Use this for initialization
