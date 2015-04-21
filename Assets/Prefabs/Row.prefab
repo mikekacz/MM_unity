@@ -232,23 +232,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &166004
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 224: {fileID: 22478454}
-  - 222: {fileID: 22210424}
-  - 114: {fileID: 11482298}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &178488
 GameObject:
   m_ObjectHideFlags: 1
@@ -367,7 +350,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.735000014, y: -.549999952, z: 1.19499969}
+  m_LocalPosition: {x: -.735000014, y: -.5, z: 1.19499969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22495980}
@@ -728,13 +711,13 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 7
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -964,32 +947,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 91862ac933ba7854c9d2905db4127e17, type: 2}
   - {fileID: 2100000, guid: ad38eadab491f7242bbf3b23d665545f, type: 2}
   active: 1
---- !u!114 &11482298
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 5
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 2.
 --- !u!135 &13501670
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1086,12 +1043,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!222 &22210424
-CanvasRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166004}
 --- !u!222 &22275034
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1128,7 +1079,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.699999988}
+  m_LocalPosition: {x: 0, y: 0, z: -.507000029}
   m_LocalScale: {x: .0500000007, y: .0500000007, z: .100000001}
   m_Children:
   - {fileID: 22491812}
@@ -1136,25 +1087,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 3.70000005, y: 0}
-  m_SizeDelta: {x: 47.7200012, y: 20}
-  m_Pivot: {x: .5, y: .5}
---- !u!224 &22478454
-RectTransform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 166004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -.699999988}
-  m_LocalScale: {x: .0500000007, y: .0500000007, z: 1}
-  m_Children: []
-  m_Father: {fileID: 22495980}
-  m_RootOrder: 1
-  m_AnchorMin: {x: .5, y: .5}
-  m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -6.78000021, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 3.50500011, y: 0}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22491812
 RectTransform:
@@ -1184,7 +1118,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22473214}
-  - {fileID: 22478454}
   m_Father: {fileID: 461876}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
