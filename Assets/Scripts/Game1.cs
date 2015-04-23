@@ -21,8 +21,13 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Global.Initialize();
-		StartClock ();
+		if (Global.initialized) {
+			StartClock ();
+		} else {
+			GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
+			GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
+			Global.initialized = true;
+		}
 	}
 
 	public void StartClock (){

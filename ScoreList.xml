@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="windows-1250"?>
+<?xml version="1.0" encoding="utf-8"?>
 <GameUsersContainer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GameUsers>
-    <GameUser Name="" Surname="" email="" score="0" />
-    <GameUser Name="" Surname="" email="" score="0" />
-    <GameUser Name="" Surname="" email="" score="2836" />
-    <GameUser Name="" Surname="" email="" score="0" />
+    <GameUser Name="Tomasz" Surname="Olszewski" email="ullihtch@yahoo.com" score="7902" />
   </GameUsers>
 </GameUsersContainer>

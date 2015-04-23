@@ -2,7 +2,8 @@
 using System.IO;
 
 public static class Global {
-	private static bool initialized = true;
+	// "false" if game just started.
+	public static bool initialized = false;
 
 	// Path to the save file
 	public static string saveFile = "ScoreList.xml";
@@ -12,13 +13,4 @@ public static class Global {
 
 	// Number of scoreboard rows
 	public static int scoreRows = 10;
-
-	// Use this for initialization
-	public static void Initialize() {
-		if (initialized) {
-			GameObject.Find ("/Canvas").transform.GetChild (1).gameObject.SetActive (false);
-			GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.SetActive (true);
-			initialized = false;
-		}
-	}
 }
