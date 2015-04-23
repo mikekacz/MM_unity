@@ -32,7 +32,6 @@ public class PipScript : MonoBehaviour {
     {
 		//catch if clicking through UI
 		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
-			Debug.Log ("ui active");
 			return;
 		}
 		if (GameObject.Find ("/Canvas").transform.GetChild (2).gameObject.activeInHierarchy) {

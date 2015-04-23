@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,15 +12,15 @@ public class PlayerScoreList : MonoBehaviour {
 	// Initialization
 	void Start() {
 		// If user list is empty load it from save file
-		if ( _GLOBAL.users == null)
-			_GLOBAL.users = GameUsersContainer.ReadXMLData(_GLOBAL.saveFile);
+		if ( Global.users == null)
+			Global.users = GameUsersContainer.ReadXMLData(Global.saveFile);
 
 		// Check if save file is not empty
-		if (_GLOBAL.users.list.Count == 0)
+		if (Global.users.list.Count == 0)
 			return;
 
 		// Copy users list
-		playerList = new List<GameUser>(_GLOBAL.users.list);
+		playerList = new List<GameUser>(Global.users.list);
 
 		// Remember last player
 		lastPlayer = playerList[playerList.Count - 1];
@@ -33,7 +33,7 @@ public class PlayerScoreList : MonoBehaviour {
 
 	// Draw the Scoreboard
 	void DrawScoreboard() {
-		int rowNumber = _GLOBAL.scoreRows;
+		int rowNumber = Global.scoreRows;
 		bool search = true;
 
 		// User list is empty -> nothing to draw

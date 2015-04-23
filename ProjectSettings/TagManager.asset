@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ScoreBoard
-  - Ans
-  - Button
+  - LoginScreen
+  - GameScreen
+  - ScoreScreen
   layers:
   - Default
   - TransparentFX

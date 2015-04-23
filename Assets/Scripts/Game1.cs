@@ -21,6 +21,7 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Global.Initialize();
 		StartClock ();
 	}
 
@@ -198,11 +199,11 @@ public class Game1 : MonoBehaviour {
 		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
 
 		//add score
-		lastentry = _GLOBAL.users.list[_GLOBAL.users.list.Count - 1];
+		lastentry = Global.users.list[Global.users.list.Count - 1];
 
 		lastentry.score = Score;
 		//save score to file
-		_GLOBAL.users.SaveXMLData (_GLOBAL.saveFile);
+		Global.users.SaveXMLData (Global.saveFile);
 
 
 	}

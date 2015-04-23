@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -11,7 +11,7 @@ public class EventHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		// Load previous gamers from file
-		_GLOBAL.users = GameUsersContainer.ReadXMLData(_GLOBAL.saveFile);
+		Global.users = GameUsersContainer.ReadXMLData(Global.saveFile);
 	}
 
 	// Switch between login and scoreboard screen
@@ -75,9 +75,9 @@ public class EventHandler : MonoBehaviour {
 		string email = GameObject.Find("Q3InputField").GetComponent<InputField>().text;
 		
 		// Add a new user to the user list
-		_GLOBAL.users.list.Add(new GameUser(name, surname, email, 0));
+		Global.users.list.Add(new GameUser(name, surname, email, 0));
 		
 		// Store user list in the save file
-		_GLOBAL.users.SaveXMLData(_GLOBAL.saveFile);
+		Global.users.SaveXMLData(Global.saveFile);
 	}
 }
