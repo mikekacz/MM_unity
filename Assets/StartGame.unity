@@ -546,8 +546,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2025235647}
   m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: .150000006}
-  m_AnchorMax: {x: 1, y: .245000005}
+  m_AnchorMin: {x: 0, y: .0850000009}
+  m_AnchorMax: {x: 1, y: .180000007}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -30, y: 0}
   m_Pivot: {x: .5, y: .5}
@@ -576,7 +576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "F1" to switch to the login screen.
+  m_Text: Perform action to switch to the login screen.
 --- !u!222 &192230095
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1352,10 +1352,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2025235647}
   m_RootOrder: 2
-  m_AnchorMin: {x: .0158384237, y: .245000005}
-  m_AnchorMax: {x: .984192193, y: .728000045}
-  m_AnchoredPosition: {x: 0, y: -15}
-  m_SizeDelta: {x: 0, y: 30}
+  m_AnchorMin: {x: 0, y: .180000007}
+  m_AnchorMax: {x: 1, y: .728000045}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &606462010
 MonoBehaviour:
@@ -1559,8 +1559,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 62.6344566, y: -8.56652832}
-  m_SizeDelta: {x: 125.268913, y: 14.4245071}
+  m_AnchoredPosition: {x: 60.625, y: -8.56652832}
+  m_SizeDelta: {x: 121.25, y: 14.4245071}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &740892226
 MonoBehaviour:
@@ -1810,8 +1810,8 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 363.441193, y: -8.56652832}
-  m_SizeDelta: {x: 125.268913, y: 14.4245071}
+  m_AnchoredPosition: {x: 349.375, y: -8.56652832}
+  m_SizeDelta: {x: 121.25, y: 14.4245071}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &772052666
 MonoBehaviour:
@@ -2025,10 +2025,10 @@ RectTransform:
   - {fileID: 772052665}
   m_Father: {fileID: 2025235647}
   m_RootOrder: 1
-  m_AnchorMin: {x: .0158384237, y: .728000045}
-  m_AnchorMax: {x: .984192193, y: .782479942}
+  m_AnchorMin: {x: 0, y: .728000045}
+  m_AnchorMax: {x: 1, y: .782479942}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -30, y: 0}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &998316778
 MonoBehaviour:
@@ -2940,8 +2940,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 162.903366, y: -8.56652832}
-  m_SizeDelta: {x: 75.2689133, y: 14.4245071}
+  m_AnchoredPosition: {x: 156.875, y: -8.56652832}
+  m_SizeDelta: {x: 71.25, y: 14.4245071}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1321215201
 MonoBehaviour:
@@ -3887,8 +3887,8 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250.672287, y: -8.56652832}
-  m_SizeDelta: {x: 100.268913, y: 14.4245071}
+  m_AnchoredPosition: {x: 240.625, y: -8.56652832}
+  m_SizeDelta: {x: 96.25, y: 14.4245071}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2022500088
 MonoBehaviour:
@@ -4156,7 +4156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "F1" to switch to the scoreboard screen.
+  m_Text: Perform action to switch to the score screen.
 --- !u!222 &2041779637
 CanvasRenderer:
   m_ObjectHideFlags: 0

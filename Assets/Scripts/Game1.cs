@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -21,6 +22,17 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		#if UNITY_STANDALONE
+		GameObject.Find("/Canvas").transform.GetChild(0).transform.GetChild(7).GetComponent<Text>().text = "Press \"F1\" to switch to the score screen.";
+		GameObject.Find("/Canvas").transform.GetChild(2).transform.GetChild(3).GetComponent<Text>().text = "Press \"F1\" to switch to the login screen.";
+		#endif
+		
+		#if UNITY_ANDROID
+		GameObject.Find("/Canvas").transform.GetChild(0).transform.GetChild(7).GetComponent<Text>().text = "Swipe sidewise to switch to the score screen.";
+		GameObject.Find("/Canvas").transform.GetChild(2).transform.GetChild(3).GetComponent<Text>().text = "Swipe sidewise to switch to the login screen.";
+		#endif
+
+
 		if (Global.initialized) {
 			StartClock ();
 		} else {
