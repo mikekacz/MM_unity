@@ -6,7 +6,7 @@ public static class Global {
 	public static bool initialized = false;
 
 	// Path to the save file
-	public static string saveFile = "ScoreList.xml";
+	public static string saveFile = Application.persistentDataPath + Path.DirectorySeparatorChar + "ScoreList.xml";
 
 	// Game user list
 	public static GameUsersContainer users = null;
