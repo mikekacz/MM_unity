@@ -22,10 +22,8 @@ public class Game1 : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (Global.initialized) {
-			Debug.LogError(Global.initialized);
 			StartClock ();
 		} else {
-			Debug.LogError(Global.initialized);
 			GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
 			GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
 			Global.initialized = true;
@@ -45,7 +43,6 @@ public class Game1 : MonoBehaviour {
 	public void CheckGuess(){
 		//check if UI is active
 		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
-			Debug.Log ("ui active");
 			return;
 		} 
 		//calculate guess

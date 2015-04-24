@@ -80,4 +80,19 @@ public class EventHandler : MonoBehaviour {
 		// Store user list in the save file
 		Global.users.SaveXMLData(Global.saveFile);
 	}
+
+	
+	public GameObject Panel0;
+	public GameObject Scoreboard;
+	
+	public void StartButtonClick(){
+		//Panel0.EventHandler.AddGamer
+
+		Panel0.GetComponent<EventHandler> ().AddGamer ();
+		//Scoreboard.Game1.Resetgame
+
+		Scoreboard.GetComponent<Game1> ().ResetGame ();
+		
+	}
+
 }

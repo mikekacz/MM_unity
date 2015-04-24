@@ -54,7 +54,6 @@
      <Compile Include="Assets\Scripts\Pips.cs" />
      <Compile Include="Assets\Scripts\PlayerScoreList.cs" />
      <Compile Include="Assets\Scripts\Secret.cs" />
-     <Compile Include="Assets\Scripts\StartButtonClick.cs" />
      <Compile Include="Assets\Scripts\UserList.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.EventSystems;
 
@@ -35,7 +35,6 @@ public class PipScript : MonoBehaviour {
 			return;
 		}
 		if (GameObject.Find ("/Canvas").transform.GetChild (2).gameObject.activeInHierarchy) {
-			Debug.Log ("ui active");
 			return;
 		} 
 			//catch if row is active
