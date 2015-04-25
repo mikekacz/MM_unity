@@ -3328,8 +3328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391ca0a4da65eb24f93a5585bb34d7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel0: {fileID: 1516487226}
-  Scoreboard: {fileID: 410914378}
 --- !u!114 &1516487231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4017,8 +4015,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 391ca0a4da65eb24f93a5585bb34d7f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel0: {fileID: 0}
-  Scoreboard: {fileID: 0}
 --- !u!1001 &2030042822
 Prefab:
   m_ObjectHideFlags: 0

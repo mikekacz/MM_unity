@@ -3,9 +3,9 @@ using System.IO;
 
 public static class Global {
 	// "false" if game just started.
-	public static bool initialized = false;
+	public static bool gameInit = false;
 
-	public static bool sceneSwitched = false;
+	public static bool sceneSwap = false;
 
 	// Path to the save file
 	public static string saveFile = Application.persistentDataPath + Path.DirectorySeparatorChar + "ScoreList.xml";

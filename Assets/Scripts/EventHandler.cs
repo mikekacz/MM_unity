@@ -5,7 +5,6 @@ using System.Collections;
 public class EventHandler : MonoBehaviour {
 	private Vector2 touchPosPrev;
 	private bool couldBeSwipe;
-
 	private int minSwipeDist = 10;
 
 	// Use this for initialization
@@ -18,16 +17,16 @@ public class EventHandler : MonoBehaviour {
 	void switchScreen () {
 		GameObject canvas = GameObject.Find("/Canvas");
 		GameObject loginScreen = canvas.transform.GetChild(0).gameObject;
-		GameObject scoreBoard = canvas.transform.GetChild(2).gameObject;
+		GameObject scoreScreen = canvas.transform.GetChild(2).gameObject;
 
 		if (loginScreen.activeInHierarchy) {
 			loginScreen.SetActive (false);
-			scoreBoard.SetActive (true);
+			scoreScreen.SetActive (true);
 			return;
 		}
 
-		if (scoreBoard.activeInHierarchy) {
-			scoreBoard.SetActive (false);
+		if (scoreScreen.activeInHierarchy) {
+			scoreScreen.SetActive (false);
 			loginScreen.SetActive (true);
 			return;
 		}
@@ -81,18 +80,9 @@ public class EventHandler : MonoBehaviour {
 		Global.users.SaveXMLData(Global.saveFile);
 	}
 
-	
-	public GameObject Panel0;
-	public GameObject Scoreboard;
-	
-	public void StartButtonClick(){
-		//Panel0.EventHandler.AddGamer
-
-		Panel0.GetComponent<EventHandler> ().AddGamer ();
-		//Scoreboard.Game1.Resetgame
-
-		Scoreboard.GetComponent<Game1> ().ResetGame ();
-		
+	// 
+	public void StartButtonClick() {
+		AddGamer();
+		Game1.ResetGame();
 	}
-
 }

@@ -22,13 +22,13 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (Global.initialized) {
+		if (Global.gameInit) {
 			StartClock ();
 		} else {
-			if (Global.sceneSwitched) {
+			if (Global.sceneSwap) {
 				GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
 				GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
-				Global.initialized = true;
+				Global.gameInit = true;
 			} else {
 				#if UNITY_STANDALONE
 				Application.LoadLevel("PC-Start");
@@ -38,7 +38,7 @@ public class Game1 : MonoBehaviour {
 				Application.LoadLevel("Android-Start");
 				#endif
 
-				Global.sceneSwitched = true;
+				Global.sceneSwap = true;
 			}
 		}
 	}
@@ -49,7 +49,7 @@ public class Game1 : MonoBehaviour {
 		currentrow = 0;
 	}
 
-	public void ResetGame() {
+	public static void ResetGame() {
 		#if UNITY_STANDALONE
 		Application.LoadLevel("PC-Start");
 		#endif
