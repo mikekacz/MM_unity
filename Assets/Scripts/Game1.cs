@@ -22,23 +22,24 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		#if UNITY_STANDALONE
-		GameObject.Find("/Canvas").transform.GetChild(0).transform.GetChild(7).GetComponent<Text>().text = "Press \"F1\" to switch to the score screen.";
-		GameObject.Find("/Canvas").transform.GetChild(2).transform.GetChild(3).GetComponent<Text>().text = "Press \"F1\" to switch to the login screen.";
-		#endif
-		
-		#if UNITY_ANDROID
-		GameObject.Find("/Canvas").transform.GetChild(0).transform.GetChild(7).GetComponent<Text>().text = "Swipe sidewise to switch to the score screen.";
-		GameObject.Find("/Canvas").transform.GetChild(2).transform.GetChild(3).GetComponent<Text>().text = "Swipe sidewise to switch to the login screen.";
-		#endif
-
-
 		if (Global.initialized) {
 			StartClock ();
 		} else {
-			GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
-			GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
-			Global.initialized = true;
+			if (Global.sceneSwitched) {
+				GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
+				GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
+				Global.initialized = true;
+			} else {
+				#if UNITY_STANDALONE
+				Application.LoadLevel("PC-Start");
+				#endif
+				
+				#if UNITY_ANDROID
+				Application.LoadLevel("Android-Start");
+				#endif
+
+				Global.sceneSwitched = true;
+			}
 		}
 	}
 
@@ -49,7 +50,13 @@ public class Game1 : MonoBehaviour {
 	}
 
 	public void ResetGame() {
-		Application.LoadLevel("StartGame");
+		#if UNITY_STANDALONE
+		Application.LoadLevel("PC-Start");
+		#endif
+		
+		#if UNITY_ANDROID
+		Application.LoadLevel("Android-Start");
+		#endif
 	}
 
 	public void CheckGuess(){

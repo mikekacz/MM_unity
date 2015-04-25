@@ -576,7 +576,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Perform action to switch to the login screen.
+  m_Text: Swipe sidewise to switch to the login screen.
 --- !u!222 &192230095
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4156,7 +4156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Perform action to switch to the score screen.
+  m_Text: Swipe sidewise to switch to the score screen.
 --- !u!222 &2041779637
 CanvasRenderer:
   m_ObjectHideFlags: 0
