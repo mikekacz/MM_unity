@@ -80,7 +80,7 @@ public class EventHandler : MonoBehaviour {
 		Global.users.SaveXMLData(Global.saveFile);
 	}
 
-	// 
+	// "Start Game" button was clicked.
 	public void StartButtonClick() {
 		AddGamer();
 		Game1.ResetGame();

@@ -22,23 +22,16 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if (Global.gameInit) {
+		if (Global.gameInitialized) {
 			StartClock ();
 		} else {
-			if (Global.sceneSwap) {
+			if (Global.scenesSwaped) {
 				GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
 				GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
-				Global.gameInit = true;
+				Global.gameInitialized = true;
 			} else {
-				#if UNITY_STANDALONE
-				Application.LoadLevel("PC-Start");
-				#endif
-				
-				#if UNITY_ANDROID
-				Application.LoadLevel("Android-Start");
-				#endif
-
-				Global.sceneSwap = true;
+				Game1.ResetGame();
+				Global.scenesSwaped = true;
 			}
 		}
 	}
@@ -223,12 +216,10 @@ public class Game1 : MonoBehaviour {
 
 		//add score
 		lastentry = Global.users.list[Global.users.list.Count - 1];
-
 		lastentry.score = Score;
+
 		//save score to file
 		Global.users.SaveXMLData (Global.saveFile);
-
-
 	}
 	        
 

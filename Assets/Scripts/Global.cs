@@ -2,10 +2,11 @@
 using System.IO;
 
 public static class Global {
-	// "false" if game just started.
-	public static bool gameInit = false;
+	// "false" if game just started and some setting were not initialized.
+	public static bool gameInitialized = false;
 
-	public static bool sceneSwap = false;
+	// "false" if at the beginning of the game platform specific scenes were not loaded.
+	public static bool scenesSwaped = false;
 
 	// Path to the save file
 	public static string saveFile = Application.persistentDataPath + Path.DirectorySeparatorChar + "ScoreList.xml";
