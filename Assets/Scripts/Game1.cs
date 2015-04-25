@@ -22,9 +22,11 @@ public class Game1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		// Game initialized?
 		if (Global.gameInitialized) {
 			StartClock ();
 		} else {
+			// Platform dependant scenes swaped?
 			if (Global.scenesSwaped) {
 				GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
 				GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
