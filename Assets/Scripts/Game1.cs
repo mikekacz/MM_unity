@@ -20,6 +20,10 @@ public class Game1 : MonoBehaviour {
 
 	public bool alreadyStopped = false;
 
+	public GameObject loginScreen;
+	public GameObject gameScreen;
+	public GameObject scoreScreen;
+
 	// Use this for initialization
 	void Start () {
 		// Game initialized?
@@ -28,8 +32,8 @@ public class Game1 : MonoBehaviour {
 		} else {
 			// Platform dependant scenes swaped?
 			if (Global.scenesSwaped) {
-				GameObject.Find("/Canvas").transform.GetChild(1).gameObject.SetActive(false);
-				GameObject.Find("/Canvas").transform.GetChild(0).gameObject.SetActive(true);
+				gameScreen.SetActive(false);
+				loginScreen.SetActive(true);
 				Global.gameInitialized = true;
 			} else {
 				Game1.ResetGame();
@@ -44,6 +48,7 @@ public class Game1 : MonoBehaviour {
 		currentrow = 0;
 	}
 
+	// Load starting scene depending on platform
 	public static void ResetGame() {
 		#if UNITY_STANDALONE
 		Application.LoadLevel("PC-Start");
@@ -56,7 +61,7 @@ public class Game1 : MonoBehaviour {
 
 	public void CheckGuess(){
 		//check if UI is active
-		if (GameObject.Find ("/Canvas").transform.GetChild (0).gameObject.activeInHierarchy) {
+		if (loginScreen.activeInHierarchy) {
 			return;
 		} 
 		//calculate guess
@@ -206,7 +211,6 @@ public class Game1 : MonoBehaviour {
 
 		alreadyStopped = true;
 
-		// Debug.Break();
 		// stop script routines
 		stoptime = Time.time;
 		// calculate score
@@ -214,11 +218,12 @@ public class Game1 : MonoBehaviour {
 
 		//show secret
 		GameObject.Find ("Secret").GetComponent<Secret> ().ShowSecret ();
-		GameObject.Find ("/Canvas").transform.GetChild(2).gameObject.SetActive (true);
+		scoreScreen.SetActive(true);
 
 		//add score
 		lastentry = Global.users.list[Global.users.list.Count - 1];
 		lastentry.score = Score;
+		Global.currentUser.score = Score;
 
 		//save score to file
 		Global.users.SaveXMLData (Global.saveFile);
