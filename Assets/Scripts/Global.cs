@@ -10,6 +10,9 @@ public static class Global {
 	// "false" if at the beginning of the game platform specific scenes were not loaded.
 	public static bool scenesSwaped = false;
 
+	// True if a game just ended
+	public static bool newGame = false;
+
 	// Path to the save file
 	public static string saveFile = Application.persistentDataPath + Path.DirectorySeparatorChar + "ScoreList.xml";
 

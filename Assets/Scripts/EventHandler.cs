@@ -14,6 +14,12 @@ public class EventHandler : MonoBehaviour {
 	void Start() {
 		// Load previous gamers from file
 		Global.users = GameUsersContainer.ReadXMLData(Global.saveFile);
+
+		// Restore player details on login screen if necessary
+		if (Global.newGame) {
+			RestoreLogin();
+			Global.newGame = false;
+		}
 	}
 
 	// Update is called once per frame
@@ -55,6 +61,7 @@ public class EventHandler : MonoBehaviour {
 		SaveToggles();
 		AddGamer();
 		Game1.ResetGame();
+		Global.newGame = true;
 	}
 
 	// Sets the correct toggle
@@ -86,7 +93,6 @@ public class EventHandler : MonoBehaviour {
 		if (scoreScreen.activeInHierarchy) {
 			scoreScreen.SetActive (false);
 			loginScreen.SetActive (true);
-			RestoreLogin();
 			return;
 		}
 	}
@@ -114,7 +120,7 @@ public class EventHandler : MonoBehaviour {
 	}
 
 	// Fill fields on login screen
-	public void RestoreLogin() {
+	private void RestoreLogin() {
 		if (Global.currentUser == null)
 			return;
 
@@ -123,6 +129,7 @@ public class EventHandler : MonoBehaviour {
 			loginScreen.transform.GetChild(2).GetComponent<InputField>().text = Global.currentUser.Name;
 		} else {
 			loginScreen.transform.GetChild(2).GetComponent<InputField>().text = "";
+			Global.currentUser.Name = "";
 		}
 
 		loginScreen.transform.GetChild(6).GetComponent<Toggle>().isOn = Global.toggles[1];
@@ -130,6 +137,7 @@ public class EventHandler : MonoBehaviour {
 			loginScreen.transform.GetChild(5).GetComponent<InputField>().text = Global.currentUser.Surname;
 		} else {
 			loginScreen.transform.GetChild(5).GetComponent<InputField>().text = "";
+			Global.currentUser.Surname = "";
 		}
 
 		loginScreen.transform.GetChild(9).GetComponent<Toggle>().isOn = Global.toggles[2];
@@ -137,6 +145,7 @@ public class EventHandler : MonoBehaviour {
 			loginScreen.transform.GetChild(8).GetComponent<InputField>().text = Global.currentUser.email;
 		} else {
 			loginScreen.transform.GetChild(8).GetComponent<InputField>().text = "";
+			Global.currentUser.email = "";
 		}
 	}
 }
