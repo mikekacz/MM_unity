@@ -229,7 +229,7 @@ public class Game1 : MonoBehaviour {
 		Global.users.SaveXMLData (Global.saveFile);
 	}
 	        
-
+	// Update is called once per frame
 	void Update () {
 		if (restseconds <= 0) {
 			EvaluateWin (); // stop and evaluate win

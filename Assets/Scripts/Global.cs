@@ -25,6 +25,9 @@ public static class Global {
 	// Current user
 	public static GameUser currentUser = null;
 
+	// 
+	public static bool[] validInput = new bool[3];
+
 	// List of toggles to save the choices which input fields need to be remembered
 	public static bool[] toggles = new bool[3];
 }
